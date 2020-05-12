@@ -1,0 +1,37 @@
+@import "flex.scss";
+@import "_colors.scss";
+@import "~@/assets/fonts/Roboto.css";
+
+body {
+    background-color: $Mercury;
+    height: 100vh;
+    margin: 0px;
+
+    > #app {
+        height: 100vh;
+    }
+
+    h1 {
+        font-weight: 900;
+        color: rgba(0, 0, 0, 0.7);
+        font-size: 28px;
+    }
+
+    p {
+        color: $ShuttleGray;
+        font-size: 12px;
+        line-height: 17px;
+    }
+
+    .cursor-pointer {
+        cursor: pointer;
+    }
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.pl-50 {
+    padding-left: 50px;
+}

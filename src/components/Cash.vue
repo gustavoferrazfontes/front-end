@@ -1,5 +1,8 @@
 <template>
-  <section class="d-flex f-45 jc-center ai-center cursor-pointer cash" @click.prevent="add">
+  <section
+    class="d-flex f-45 jc-center ai-center cursor-pointer cash"
+    @click.prevent="$emit('click',bill)"
+  >
     <span>R$ {{bill}}</span>
   </section>
 </template>
@@ -11,9 +14,6 @@ export default {
       Type: Number,
       required: true
     }
-  },
-  methods: {
-    add() {}
   }
 };
 </script>

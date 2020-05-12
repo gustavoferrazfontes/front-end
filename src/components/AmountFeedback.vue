@@ -1,7 +1,7 @@
 <template>
   <section :class="backgroundColorStyle" class="amount-feedback d-flex f-1 jc-start ai-center">
     <CurrencyIcon color="#fff" :height="22" :width="22" class="icon" />
-    <span class="title">Você já adicionou R$ 50,00</span>
+    <span class="title">{{message}}</span>
   </section>
 </template>
 <script>
@@ -16,12 +16,25 @@ export default {
   computed: {
     backgroundColorStyle() {
       return this.value > 0 ? "added" : "empty";
+    },
+    message() {
+      return this.value > 0
+        ? `Você já adicionou R$ ${this.value},00`
+        : "Você não adicionou nada";
+    }
+  },
+  watch: {
+    value: {
+      handler(value) {
+        console.log(value);
+      }
     }
   }
 };
 </script>
 <style lang="scss" scoped>
 @import "@/styles/_colors";
+@import "@/styles/breakpoints";
 
 .amount-feedback {
   position: absolute;
@@ -46,6 +59,10 @@ export default {
   }
   .icon {
     margin-left: 14px;
+  }
+
+  @media (max-width: $mobile) {
+    right: -33px;
   }
 }
 </style>

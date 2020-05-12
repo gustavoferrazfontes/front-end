@@ -10,13 +10,25 @@
 import PlusIcon from "@/components/PlusIcon";
 export default {
   name: "AddMoneyButton",
-
   components: {
     PlusIcon
   },
+  props: {
+    employeeName: {
+      Type: String,
+      default: () => ""
+    }
+  },
   methods: {
     openModal() {
-      this.$eventhub.$emit("modal:open:modal");
+      this.$eventhub.$emit("modal:open:modal", {
+        add: this.addMoney,
+        title: this.employeeName
+      });
+    },
+
+    addMoney(value) {
+      this.$emit("added", value);
     }
   }
 };

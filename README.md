@@ -1,34 +1,29 @@
 # front-end
 
-## Project setup
+Projeto desenvolvido com Vuejs e hospedado no Azure
+
+para acessar o site, [clique aqui](http://frontendvuejs.z15.web.core.windows.net/)
+
+## Setup para execução do projeto locamente
+
+### para instalar as dependências
+
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### para executar localmente
+
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+### para executar a suite de testes
 
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Run your unit tests
 ```
 npm run test:unit
 ```
 
 ### Customize configuration
+
 See [Configuration Reference](https://cli.vuejs.org/config/).

@@ -1,5 +1,5 @@
 <template>
-  <section class="d-flex wrapped f-100 w-100 main">
+  <section class="d-flex wrapped f-100 main">
     <Menu />
     <article class="d-flex f-70 wrapped jc-center main-content">
       <router-view />

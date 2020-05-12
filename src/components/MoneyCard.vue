@@ -55,14 +55,7 @@ export default {
       return this.amount >= 200;
     }
   },
-  watch: {
-    employee: {
-      deep: true,
-      handler(value) {
-        console.log(value);
-      }
-    }
-  },
+
   methods: {
     ...mapActions(["updateAmount"]),
 

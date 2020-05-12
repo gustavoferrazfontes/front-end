@@ -125,5 +125,9 @@ export default {
   .border-solid {
     border: 2px solid white;
   }
+
+  @media (max-width: $mobile) {
+    align-items: flex-end;
+  }
 }
 </style>

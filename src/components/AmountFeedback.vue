@@ -22,13 +22,6 @@ export default {
         ? `Você já adicionou R$ ${this.value},00`
         : "Você não adicionou nada";
     }
-  },
-  watch: {
-    value: {
-      handler(value) {
-        console.log(value);
-      }
-    }
   }
 };
 </script>

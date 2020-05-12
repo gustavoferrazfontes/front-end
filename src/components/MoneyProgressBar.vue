@@ -40,7 +40,7 @@ export default {
   progress:before {
     content: "R$ " attr(value) ",00";
     font-size: 0.8em;
-    left: 0;
+    left: 50%;
     position: absolute;
     right: 0;
     margin-left: 10px;

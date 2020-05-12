@@ -4,6 +4,8 @@
     <article class="d-flex f-70 wrapped jc-center main-content">
       <router-view />
     </article>
+
+    <Modal name="modal" />
   </section>
 </template>
 

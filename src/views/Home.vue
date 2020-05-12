@@ -5,7 +5,6 @@
       <MoneyCard />
       <MoneyCard />
     </article>
-    <Modal />
   </section>
 </template>
 <script>

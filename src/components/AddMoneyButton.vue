@@ -1,5 +1,5 @@
 <template>
-  <i class="cursor-pointer add-money-button">
+  <i class="cursor-pointer add-money-button" @click="openModal">
     <PlusIcon />
     <a>
       <span class="title">Clique aqui para adicionar reais</span>
@@ -13,6 +13,11 @@ export default {
 
   components: {
     PlusIcon
+  },
+  methods: {
+    openModal() {
+      this.$eventhub.$emit("modal:open:modal");
+    }
   }
 };
 </script>

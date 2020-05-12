@@ -42,3 +42,8 @@ body {
 .mr-40 {
     margin-right: 40px;
 }
+
+.disabled-container {
+    pointer-events: none;
+    opacity: 0.4;
+}

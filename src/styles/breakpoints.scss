@@ -1,0 +1,44 @@
+// breakpoints
+
+$desktop: "1440px";
+$laptop: "1024px";
+$tablet: "769px";
+$mobile: "426px";
+
+$point-xl: "1920px";
+$point-lg: "1919px";
+$point-md: "1279px";
+$point-sm: "959px";
+$point-xs: "599px";
+
+@mixin media($selector) {
+    #{$selector}-xl {
+        @media (min-width: $point-xl) {
+            @content;
+        }
+    }
+
+    #{$selector}-lg {
+        @media (max-width: $point-lg) {
+            @content;
+        }
+    }
+
+    #{$selector}-md {
+        @media (max-width: $point-md) {
+            @content;
+        }
+    }
+
+    #{$selector}-sm {
+        @media (max-width: $point-sm) {
+            @content;
+        }
+    }
+
+    #{$selector}-xs {
+        @media (max-width: $point-xs) {
+            @content;
+        }
+    }
+}

@@ -1,5 +1,5 @@
 <template>
-  <section class="d-flex f-100 ai-center jc-center logotipo">
+  <section class="d-flex ai-center jc-center logotipo">
     <span>logotipo</span>
   </section>
 </template>
@@ -10,6 +10,8 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import "@/styles/_colors.scss";
+@import "@/styles/breakpoints";
+
 .logotipo {
   border-radius: 40px;
   background: $ParisWhite;
@@ -22,6 +24,19 @@ export default {
     font-size: 28px;
     font-weight: 900;
     color: $GreenRaze;
+  }
+
+  @media (max-width: $laptop) {
+    justify-content: center;
+    margin: 0;
+    height: 42px;
+    margin: 10px 0;
+    padding: 10px;
+    width: 100px;
+
+    span {
+      font-size: 14px;
+    }
   }
 }
 </style>

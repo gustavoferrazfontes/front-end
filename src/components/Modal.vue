@@ -3,12 +3,12 @@
     <section class="modal" @keyup.esc="close" tabindex="0">
       <article class="modal-content d-flex f-100 wrapped medium">
         <header class="d-flex f-100 w-100 ai-center jc-space-between">
-          <h2>Quantos reais adicionar para [Nome da pessoa]?</h2>
+          <h2>Quantos reais adicionar para {{title}}?</h2>
           <CloseIcon class="cursor-pointer" @click="close" />
         </header>
         <article class="d-flex f-100 jc-center ai-center wrapped content">
           <div class="d-flex f-1 wrapped jc-space-between ml-40 mr-40">
-            <Cash v-for="(bill,index) in bills" :key="index" :bill="bill" />
+            <Cash v-for="(bill,index) in bills" :key="index" :bill="bill" @click="onSelect" />
           </div>
         </article>
         <footer class="d-flex f-100 wrapped"></footer>
@@ -23,9 +23,11 @@ export default {
     Cash
   },
   data: () => ({
-    show: true,
+    show: false,
     name: "modal",
-    bills: [25, 50, 75, 125]
+    bills: [25, 50, 75, 125],
+    title: "",
+    add: () => ({})
   }),
   created() {
     this.register();
@@ -36,8 +38,15 @@ export default {
       const MODAL_OPEN_EVENT = `modal:open:${this.name}`;
       this.$eventhub.$on(MODAL_OPEN_EVENT, this.open);
     },
-    open() {
+    onSelect(bill) {
+      this.add(bill);
+      this.close();
+    },
+
+    open({ title, add }) {
       this.show = true;
+      this.title = title;
+      this.add = add;
     },
     close() {
       this.show = false;
@@ -47,6 +56,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import "@/styles/_colors.scss";
+@import "@/styles/breakpoints";
 
 .content-fade-leave-active,
 .content-fade-enter-to,
@@ -105,6 +115,11 @@ export default {
       min-width: 45%;
       max-width: 45%;
       height: 70%;
+
+      @media (max-width: $mobile) {
+        max-width: 100%;
+        min-width: 100%;
+      }
     }
   }
   .border-solid {

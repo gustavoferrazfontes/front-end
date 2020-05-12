@@ -19,11 +19,24 @@ export default {
 };
 </script>
 <style lang="scss">
+@import "@/styles/breakpoints";
+
 .main {
   height: 100vh;
 
   .main-content {
     margin: 0 50px 0 127px;
+  }
+
+  @media (max-width: $laptop) {
+    flex: 0 1 100%;
+    width: auto;
+    flex-wrap: wrap;
+
+    .main-content {
+      flex: 0 1 100%;
+      margin: 0px;
+    }
   }
 }
 </style>

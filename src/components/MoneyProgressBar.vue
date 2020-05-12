@@ -1,11 +1,22 @@
 <template>
   <section class="d-flex f-100 wrapped money-progress-bar">
-    <progress max="200" value="50" data-label="R$ 50,00"></progress>
+    <progress max="200" :value="value" class="labelStyle"></progress>
   </section>
 </template>
 <script>
 export default {
-  name: "MoneyProgressBar"
+  name: "MoneyProgressBar",
+  props: {
+    value: {
+      Type: Number,
+      default: () => 0
+    }
+  },
+  computed: {
+    labelStyle() {
+      return this.value > 0 ? "not-empty" : "empty";
+    }
+  }
 };
 </script>
 <style lang="scss" >
@@ -27,11 +38,13 @@ export default {
     border-radius: 10px;
   }
   progress:before {
-    content: attr(data-label);
+    content: "R$ " attr(value) ",00";
     font-size: 0.8em;
     left: 0;
     position: absolute;
     right: 0;
+    margin-left: 10px;
+    color: #fff;
   }
 }
 </style>

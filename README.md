@@ -2,7 +2,7 @@
 
 Projeto desenvolvido com Vuejs e hospedado no Azure
 
-para acessar o site, [clique aqui](http://frontendvuejs.z15.web.core.windows.net/)
+para acessar o site, [clique aqui](http://gffontes-vuejs.s3-website-sa-east-1.amazonaws.com)
 
 ## Setup para execução do projeto locamente
 
